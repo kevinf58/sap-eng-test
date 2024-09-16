@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react'
-import { Memory } from '../types/memories.type'
-import axios from '../axios'
-import Container from './common/Container'
-import formatDate from '../helpers/formatDate'
-import { MdOutlineMoreHoriz } from 'react-icons/md'
-import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
-import Button from './common/Button'
+import { Memory } from '../../types/memory.type'
+import axios from '../../axios'
+import Container from '../common/Container'
+import formatDate from '../../helpers/formatDate'
+import Button from '../common/Button'
 import { toast } from 'react-toastify'
 
 const Memories = () => {
@@ -41,7 +39,20 @@ const Memories = () => {
       <ul>
         {memories.map((memory) => (
           <li key={memory.id}>
-            <Container>
+            <Container
+              popoverChildren={
+                <div className='bg-white mt-1'>
+                  <Button
+                    onClick={() => {
+                      deleteMemory(memory.id as number)
+                      toast.success('Memory deleted successfully')
+                    }}
+                  >
+                    <div className='font-sans mx-2 text-xs'>Delete</div>
+                  </Button>
+                </div>
+              }
+            >
               <>
                 <div className='flex items-center'>
                   <img src='/assets/images/cat.png' className='h-[8vw] m-2' />
@@ -56,25 +67,6 @@ const Memories = () => {
                       {memory.description}
                     </p>
                   </div>
-                </div>
-                <div className='ml-auto mt-2 hover:shadow-md rounded-md transition-shadow duration-300'>
-                  <Popover>
-                    <PopoverButton>
-                      <MdOutlineMoreHoriz size={24} />
-                    </PopoverButton>
-                    <PopoverPanel anchor='bottom' className='flex flex-col'>
-                      <div className='bg-white mt-1'>
-                        <Button
-                          onClick={() => {
-                            deleteMemory(memory.id as number)
-                            toast.success('Memory deleted successfully')
-                          }}
-                        >
-                          <div className='font-sans mx-2 text-xs'>Delete</div>
-                        </Button>
-                      </div>
-                    </PopoverPanel>
-                  </Popover>
                 </div>
               </>
             </Container>

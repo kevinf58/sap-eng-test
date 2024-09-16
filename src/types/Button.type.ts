@@ -1,7 +1,7 @@
-import { ComponentProps } from './Component.type'
 import { MouseEvent } from 'react'
 
 export type ButtonProps = {
-  color?: 'blue' | 'black'
+  children: JSX.Element
   onClick: (evt: MouseEvent<HTMLButtonElement>) => void
-} & ComponentProps
+  color?: 'blue' | 'black'
+}

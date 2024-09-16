@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import axios from '../axios'
-import { Memory } from '../types/memories.type'
+import axios from '../../axios'
+import { Memory } from '../../types/memory.type'
 
 const AddMemoryForm: React.FC = () => {
   const [name, setName] = useState<string>('')

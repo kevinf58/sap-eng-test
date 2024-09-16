@@ -1,8 +1,14 @@
+import Button from './common/Button'
 import Container from './common/Container'
 
 const Description = () => {
   return (
     <Container
+      popoverChildren={
+        <Button onClick={() => {}}>
+          <div>Button</div>
+        </Button>
+      }
       children={
         <p>
           Jae Doe's Journey has been a tapestry of curiosity and exploration.
