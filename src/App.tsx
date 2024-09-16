@@ -37,6 +37,9 @@ function App() {
               <MenuItem>
                 <div>Most Recent</div>
               </MenuItem>
+              <MenuItem>
+                <div>Least Recent</div>
+              </MenuItem>
             </MenuItems>
           </Menu>
           <Button onClick={() => setModalOpen(true)}>
