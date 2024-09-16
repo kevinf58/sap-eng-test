@@ -11,3 +11,6 @@ Lastly, for my HTTP requests, I used axios and inserted the functions directly i
 
 https://github.com/user-attachments/assets/9c2f6ac3-3cd8-4c47-9893-4ca3f885d116
 
+### Up to date UI
+
+![image](https://github.com/user-attachments/assets/fa94e5eb-d3ab-41d1-8a8e-c45cb2c9dd10)
